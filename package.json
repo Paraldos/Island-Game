@@ -1,0 +1,12 @@
+{
+  "name": "dungeoncrawl",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "sass --watch ./styles/__include.scss ./styles.css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
