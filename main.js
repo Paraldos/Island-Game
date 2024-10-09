@@ -1,1 +1,3 @@
-console.log("Hello World");
+import Board from "./components/board.js";
+
+new Board();
