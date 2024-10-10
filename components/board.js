@@ -1,10 +1,21 @@
 export default class Board {
   constructor() {
+    this.board = this.createBoard();
     this.grid = this.createGrid();
+    this.grid[3][3] = 1;
+    this.grid[3][4] = 2;
+    this.grid[4][3] = 1;
     this.displayGrid();
   }
 
-  createGrid(size = 5) {
+  createBoard() {
+    const board = document.createElement("div");
+    board.classList.add("board");
+    document.body.appendChild(board);
+    return board;
+  }
+
+  createGrid(size = 20) {
     let grid = [];
     for (let i = 0; i < size; i++) {
       let row = [];
@@ -17,24 +28,28 @@ export default class Board {
   }
 
   async displayGrid() {
-    const svgResponse = await fetch("assets/board/hexagon.svg");
-    const svgText = await svgResponse.text();
-    const parser = new DOMParser();
-    const svgDocument = parser.parseFromString(svgText, "image/svg+xml");
-    const svgElement = svgDocument.documentElement;
-
     for (let x = 0; x < this.grid.length; x++) {
       for (let y = 0; y < this.grid[x].length; y++) {
-        const hexSize = 100;
         const element = document.createElement("div");
+        this.board.appendChild(element);
+        // type
+        switch (this.grid[x][y]) {
+          case 0:
+            element.classList.add(`board__cell--water`);
+            break;
+          case 1:
+            element.classList.add(`board__cell--land`);
+            break;
+          case 2:
+            element.classList.add(`board__cell--stone`);
+            break;
+        }
+        // classes
         element.classList.add(`board__cell`);
-
-        element.style.setProperty("--position-x", x * hexSize + "px");
-        element.style.setProperty("--position-y", y * hexSize + "px");
-
-        const svgClone = svgElement.cloneNode(true);
-        element.appendChild(svgClone);
-        document.body.appendChild(element);
+        element.classList.add(`board__cell-${x}-${y}`);
+        // styles
+        element.style.setProperty("--position-x", x);
+        element.style.setProperty("--position-y", y);
       }
     }
   }

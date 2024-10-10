@@ -1,19 +1,21 @@
 .board__cell {
   --position-x: 0;
   --positin-y: 0;
-  --offset-x: 0px;
-  --offset-y: 0px;
+  --cell-size: 40px;
 
-  width: 100px;
-  height: 100px;
+  width: var(--cell-size);
+  height: var(--cell-size);
   position: absolute;
-  left: calc(var(--position-x) + var(--offset-x));
-  top: calc(var(--position-y) + var(--offset-y));
-  background-color: red;
+  left: calc(var(--position-x) * var(--cell-size));
+  top: calc(var(--position-y) * var(--cell-size));
   border: 1px solid black;
+  background-color: blue;
 
-  svg {
-    width: 100%;
-    height: 100%;
+  &--land {
+    background-color: green;
+  }
+
+  &--stone {
+    background-color: gray;
   }
 }
