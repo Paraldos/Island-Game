@@ -1,10 +1,18 @@
 export default class Board {
   constructor() {
     this.board = this.createBoard();
-    this.grid = this.createGrid();
-    this.grid[3][3] = 1;
-    this.grid[3][4] = 2;
-    this.grid[4][3] = 1;
+    this.grid = [
+      [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 1, 1, 1, 1, 0, 0, 0, 0],
+      [0, 1, 2, 2, 2, 2, 1, 1, 0, 0],
+      [0, 1, 2, 2, 2, 2, 2, 2, 1, 0],
+      [0, 0, 1, 2, 2, 2, 2, 2, 1, 0],
+      [0, 1, 2, 2, 2, 2, 2, 1, 0, 0],
+      [0, 0, 1, 2, 2, 2, 2, 1, 0, 0],
+      [0, 0, 0, 1, 1, 2, 2, 2, 1, 0],
+      [0, 0, 0, 0, 0, 1, 1, 1, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    ];
     this.displayGrid();
   }
 
@@ -18,8 +26,10 @@ export default class Board {
   createGrid(size = 20) {
     let grid = [];
     for (let i = 0; i < size; i++) {
+      // add row
       let row = [];
       grid.push(row);
+      // add cell
       for (let j = 0; j < size; j++) {
         row.push(0);
       }
@@ -28,20 +38,20 @@ export default class Board {
   }
 
   async displayGrid() {
-    for (let x = 0; x < this.grid.length; x++) {
-      for (let y = 0; y < this.grid[x].length; y++) {
+    for (let y = 0; y < this.grid.length; y++) {
+      for (let x = 0; x < this.grid[y].length; x++) {
         const element = document.createElement("div");
         this.board.appendChild(element);
         // type
-        switch (this.grid[x][y]) {
+        switch (this.grid[y][x]) {
           case 0:
             element.classList.add(`board__cell--water`);
             break;
           case 1:
-            element.classList.add(`board__cell--land`);
+            element.classList.add(`board__cell--sand`);
             break;
           case 2:
-            element.classList.add(`board__cell--stone`);
+            element.classList.add(`board__cell--land`);
             break;
         }
         // classes

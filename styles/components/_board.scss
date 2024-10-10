@@ -1,21 +1,27 @@
-.board__cell {
-  --position-x: 0;
-  --positin-y: 0;
-  --cell-size: 40px;
+.board {
+  &__cell {
+    --position-x: 0;
+    --positin-y: 0;
+    --cell-size: 40px;
 
-  width: var(--cell-size);
-  height: var(--cell-size);
-  position: absolute;
-  left: calc(var(--position-x) * var(--cell-size));
-  top: calc(var(--position-y) * var(--cell-size));
-  border: 1px solid black;
-  background-color: blue;
+    width: var(--cell-size);
+    height: var(--cell-size);
+    position: absolute;
+    left: calc(var(--position-x) * var(--cell-size));
+    top: calc(var(--position-y) * var(--cell-size));
+    border: 1px solid black;
+    background-color: blue;
 
-  &--land {
-    background-color: green;
-  }
+    &--sand {
+      background-color: yellow;
+    }
 
-  &--stone {
-    background-color: gray;
+    &--land {
+      background-color: green;
+    }
+
+    &--stone {
+      background-color: gray;
+    }
   }
 }

@@ -10,6 +10,9 @@
   border: 1px solid black;
   background-color: blue;
 }
+.board__cell--sand {
+  background-color: yellow;
+}
 .board__cell--land {
   background-color: green;
 }
