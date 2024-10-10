@@ -9,7 +9,7 @@ export default class Board {
     for (let i = 0; i < size; i++) {
       let row = [];
       grid.push(row);
-      for (let j = 0; j < size * 2; j++) {
+      for (let j = 0; j < size; j++) {
         row.push(0);
       }
     }
@@ -31,11 +31,6 @@ export default class Board {
 
         element.style.setProperty("--position-x", x * hexSize + "px");
         element.style.setProperty("--position-y", y * hexSize + "px");
-
-        const xOffset = y % 2 !== 0 ? x * 25 + 50 : x * 25;
-        element.style.setProperty("--offset-x", xOffset + "px");
-        element.style.setProperty("--offset-y", y * -50 + "px");
-        console.log(y * 50);
 
         const svgClone = svgElement.cloneNode(true);
         element.appendChild(svgClone);
