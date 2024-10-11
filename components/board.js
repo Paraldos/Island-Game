@@ -1,5 +1,6 @@
 export default class Board {
   constructor() {
+    this.boardSize = 10;
     this.board = this.createBoard();
     this.grid = [
       [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -19,18 +20,19 @@ export default class Board {
   createBoard() {
     const board = document.createElement("div");
     board.classList.add("board");
+    board.style.setProperty('--board-size', this.boardSize)
     document.body.appendChild(board);
     return board;
   }
 
-  createGrid(size = 20) {
+  createGrid() {
     let grid = [];
-    for (let i = 0; i < size; i++) {
+    for (let i = 0; i < this.boardSize; i++) {
       // add row
       let row = [];
       grid.push(row);
       // add cell
-      for (let j = 0; j < size; j++) {
+      for (let j = 0; j < this.boardSize; j++) {
         row.push(0);
       }
     }
@@ -57,9 +59,6 @@ export default class Board {
         // classes
         element.classList.add(`board__cell`);
         element.classList.add(`board__cell-${x}-${y}`);
-        // styles
-        element.style.setProperty("--position-x", x);
-        element.style.setProperty("--position-y", y);
       }
     }
   }
