@@ -1,8 +1,11 @@
 body {
+  --header-size: 50px;
+  --footer-size: 100px;
+
     height: 100vh;
     width: 100vw;
+    display: grid;
+    grid-template-rows: var(--header-size) auto var(--footer-size);
     background-color: var(--color__board-background);
-    display: flex;
-    flex-direction: column;
   }
   
