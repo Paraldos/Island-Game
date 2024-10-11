@@ -3,10 +3,15 @@
 * {
     --cell-size: 75px;
 
-    --color__background: #181d25;
+    // board
+    --color__board-background: #181d25;
     --color__water: #3b94ff;
     --color__sand: #ffdd15;
     --color__land: #00822c;
     --color__stone: #565f70;
     --color__outline: #ef2e2e;
+    // footer / header
+    --color__background-footer: #353c4a;
+    --color__background-header: #353c4a;
+
 }

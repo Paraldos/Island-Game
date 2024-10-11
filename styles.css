@@ -1,17 +1,19 @@
 * {
   --cell-size: 75px;
-  --color__background: #181d25;
+  --color__board-background: #181d25;
   --color__water: #3b94ff;
   --color__sand: #ffdd15;
   --color__land: #00822c;
   --color__stone: #565f70;
   --color__outline: #ef2e2e;
+  --color__background-footer: #353c4a;
+  --color__background-header: #353c4a;
 }
 
 .header {
   width: 100%;
   height: 10vh;
-  background-color: green;
+  background-color: var(--color__background-header);
 }
 
 .board {
@@ -30,7 +32,7 @@
   top: calc(var(--position-y) * var(--cell-size));
   background-color: var(--color__water);
   border-radius: 10px;
-  border: 2px solid var(--color__background);
+  border: 2px solid var(--color__board-background);
 }
 .board__cell:hover {
   border-color: var(--color__outline);
@@ -48,7 +50,7 @@
 .footer {
   width: 100%;
   height: 10vh;
-  background-color: yellow;
+  background-color: var(--color__background-footer);
   display: flex;
   justify-content: space-between;
   align-items: center;

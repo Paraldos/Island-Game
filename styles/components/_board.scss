@@ -15,7 +15,7 @@
     top: calc(var(--position-y) * var(--cell-size));
     background-color: var(--color__water);
     border-radius: 10px;
-    border: 2px solid var(--color__background);
+    border: 2px solid var(--color__board-background);
 
     &:hover {
       border-color: var(--color__outline);
