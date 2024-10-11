@@ -1,3 +1,13 @@
+* {
+  --cell-size: 75px;
+  --color__background: #181d25;
+  --color__water: #3b94ff;
+  --color__sand: #ffdd15;
+  --color__land: #00822c;
+  --color__stone: #565f70;
+  --color__outline: #ef2e2e;
+}
+
 .header {
   width: 100%;
   height: 10vh;
@@ -13,33 +23,44 @@
 .board__cell {
   --position-x: 0;
   --positin-y: 0;
-  --cell-size: 50px;
   width: var(--cell-size);
   height: var(--cell-size);
   position: absolute;
   left: calc(var(--position-x) * var(--cell-size));
   top: calc(var(--position-y) * var(--cell-size));
-  background-color: blue;
+  background-color: var(--color__water);
   border-radius: 10px;
-  border: 2px solid black;
+  border: 2px solid var(--color__background);
 }
 .board__cell:hover {
-  border-color: red;
+  border-color: var(--color__outline);
 }
 .board__cell--sand {
-  background-color: yellow;
+  background-color: var(--color__sand);
 }
 .board__cell--land {
-  background-color: green;
+  background-color: var(--color__land);
 }
 .board__cell--stone {
-  background-color: gray;
+  background-color: var(--color__stone);
 }
 
 .footer {
   width: 100%;
   height: 10vh;
   background-color: yellow;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nextTurnBtn {
+  background-color: gray;
+  outline: none;
+  border: none;
+  height: 100px;
+  width: 100px;
+  border-radius: 100%;
 }
 
 *,

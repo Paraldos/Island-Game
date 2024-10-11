@@ -7,31 +7,30 @@
   &__cell {
     --position-x: 0;
     --positin-y: 0;
-    --cell-size: 50px;
 
     width: var(--cell-size);
     height: var(--cell-size);
     position: absolute;
     left: calc(var(--position-x) * var(--cell-size));
     top: calc(var(--position-y) * var(--cell-size));
-    background-color: blue;
+    background-color: var(--color__water);
     border-radius: 10px;
-    border: 2px solid black;
+    border: 2px solid var(--color__background);
 
     &:hover {
-      border-color: red;
+      border-color: var(--color__outline);
     }
 
     &--sand {
-      background-color: yellow;
+      background-color: var(--color__sand);
     }
 
     &--land {
-      background-color: green;
+      background-color: var(--color__land);
     }
 
     &--stone {
-      background-color: gray;
+      background-color: var(--color__stone);
     }
   }
 }
