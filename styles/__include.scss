@@ -1,5 +1,7 @@
 @import "./meta/_include";
+@import "./elements/_include";
 @import "./components/_include";
+
 
 *,
 *::before,
@@ -7,12 +9,4 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-}
-
-body {
-  height: 100vh;
-  width: 100vw;
-  background-color: var(--color__board-background);
-  display: flex;
-  flex-direction: column;
 }

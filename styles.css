@@ -1,5 +1,5 @@
 * {
-  --cell-size: 100px;
+  --cell-size: 70px;
   --color__board-background: #181d25;
   --color__water: #3b94ff;
   --color__sand: #ffdd15;
@@ -8,6 +8,14 @@
   --color__outline: #ef2e2e;
   --color__background-footer: #353c4a;
   --color__background-header: #353c4a;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--color__board-background);
+  display: flex;
+  flex-direction: column;
 }
 
 .header {
@@ -71,14 +79,6 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-}
-
-body {
-  height: 100vh;
-  width: 100vw;
-  background-color: var(--color__board-background);
-  display: flex;
-  flex-direction: column;
 }
 
 /*# sourceMappingURL=styles.css.map */
