@@ -7,7 +7,7 @@ export default class NextTurnBtn {
     addBtn() {
         const element = document.createElement('button')
         element.classList.add('nextTurnBtn');
-        element.innerHTML = 'Next Turn'
+        element.innerHTML = '>'
         return element
     }
 }
