@@ -1,5 +1,6 @@
 * {
-  --cell-size: 70px;
+  --cell-size: 50px;
+  --board-gap: 2px;
   --color__board-background: #181d25;
   --color__water: #3b94ff;
   --color__sand: #ffdd15;
@@ -43,27 +44,29 @@ body {
   position: relative;
   display: grid;
   grid-template-columns: repeat(var(--board-size), var(--cell-size));
+  gap: var(--board-gap);
   margin: auto;
   overflow: scroll;
 }
 .board__cell {
+  --color-cell: var(--color__water);
   width: var(--cell-size);
   height: var(--cell-size);
-  background-color: var(--color__water);
+  background-color: var(--color-cell);
   border-radius: 10px;
-  border: 2px solid var(--color__board-background);
+  border: 2px solid var(--color-cell);
+}
+.board__cell--sand {
+  --color-cell: var(--color__sand);
+}
+.board__cell--land {
+  --color-cell: var(--color__land);
+}
+.board__cell--stone {
+  --color-cell: var(--color__outline);
 }
 .board__cell:hover {
   border-color: var(--color__outline);
-}
-.board__cell--sand {
-  background-color: var(--color__sand);
-}
-.board__cell--land {
-  background-color: var(--color__land);
-}
-.board__cell--stone {
-  background-color: var(--color__stone);
 }
 
 .nextTurnBtn {
