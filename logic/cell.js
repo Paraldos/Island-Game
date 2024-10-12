@@ -1,3 +1,5 @@
+import SVG from "./svg.js";
+
 export default class Cell {
   constructor(parent, type, x, y) {
     this.parent = parent;
@@ -20,6 +22,17 @@ export default class Cell {
   addEventListener() {
     this.cell.addEventListener("click", () => {
       console.log(`Clicked on cell ${this.x}-${this.y}`);
+      this.addSVG("house");
     });
+  }
+
+  async addSVG(nameOfSVG) {
+    this.clearCell();
+    const svg = SVG.getSVG(nameOfSVG);
+    this.cell.appendChild(svg);
+  }
+
+  clearCell() {
+    this.cell.innerHTML = "";
   }
 }

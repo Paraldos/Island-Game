@@ -72,6 +72,9 @@ body {
   background-color: var(--color-cell);
   border-radius: 5px;
   border: 2px solid var(--color-cell);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .cell--coast {
   --color-cell: var(--color__sand);
@@ -84,6 +87,10 @@ body {
 }
 .cell:hover {
   border-color: var(--color__outline);
+}
+.cell svg {
+  width: 70%;
+  height: 70%;
 }
 
 *,
