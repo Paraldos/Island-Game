@@ -46,7 +46,7 @@ class ListItem {
 
   addElement() {
     const element = document.createElement("li");
-    element.appendChild(preload.getSVG(buildings[this.key].icon));
+    element.appendChild(buildings[this.key].icon);
     element.innerHTML += buildings[this.key].name;
     element.classList.add("buildings-list__item");
     this.parent.appendChild(element);
