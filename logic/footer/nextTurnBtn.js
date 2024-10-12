@@ -1,8 +1,10 @@
-import Preload from "./preload.js";
+import Preload from "../preload.js";
 
 export default class NextTurnBtn {
-  constructor() {
+  constructor(parent) {
+    this.parent = parent;
     this.btn = this.addBtn();
+    this.parent.appendChild(this.btn);
   }
 
   addBtn() {

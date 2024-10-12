@@ -1,8 +1,5 @@
 .nextTurnBtn {
-  background-color: gray;
-  outline: none;
-  border: none;
-
+  @include btn;
   height: 50%;
   aspect-ratio: 1;
   border-radius: 100%;

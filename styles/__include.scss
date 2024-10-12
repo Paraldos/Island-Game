@@ -1,7 +1,12 @@
 @import "./meta/_include";
-@import "./elements/_include";
-@import "./components/_include";
-
+@import "./footer/footer";
+@import "./footer/nextTurnBtn";
+@import "./footer/buildingsList";
+@import "./body";
+@import "./board";
+@import "./cell";
+@import "./header";
+@import "./loader";
 
 *,
 *::before,

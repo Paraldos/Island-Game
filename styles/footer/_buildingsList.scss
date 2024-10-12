@@ -1,0 +1,5 @@
+.buildings-list {
+  &__btn {
+    @include btn;
+  }
+}

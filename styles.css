@@ -12,6 +12,38 @@
   --color__background-header: #353c4a;
 }
 
+.footer {
+  width: 100%;
+  background-color: var(--color__background-footer);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.nextTurnBtn {
+  background-color: gray;
+  outline: none;
+  border: none;
+  padding: 10px 20px;
+  height: 50%;
+  aspect-ratio: 1;
+  border-radius: 100%;
+  font-size: 30px;
+  padding: 2px 0 0 6px;
+}
+.nextTurnBtn svg {
+  height: 100%;
+  width: 100%;
+}
+
+.buildings-list__btn {
+  background-color: gray;
+  outline: none;
+  border: none;
+  padding: 10px 20px;
+}
+
 body {
   --header-size: 50px;
   --footer-size: 100px;
@@ -25,23 +57,6 @@ body {
   color: var(--color__text);
 }
 
-.header {
-  width: 100%;
-  background-color: var(--color__background-header);
-  display: flex;
-  justify-content: left;
-  align-items: center;
-  padding: 0 20px;
-}
-
-.footer {
-  width: 100%;
-  background-color: var(--color__background-footer);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
 .board {
   --board-size: 0;
   max-width: 100%;
@@ -53,21 +68,6 @@ body {
   gap: var(--board-gap);
   margin: auto;
   overflow: scroll;
-}
-
-.nextTurnBtn {
-  background-color: gray;
-  outline: none;
-  border: none;
-  height: 50%;
-  aspect-ratio: 1;
-  border-radius: 100%;
-  font-size: 30px;
-  padding: 2px 0 0 6px;
-}
-.nextTurnBtn svg {
-  height: 100%;
-  width: 100%;
 }
 
 .cell {
@@ -96,6 +96,15 @@ body {
 .cell svg {
   width: 70%;
   height: 70%;
+}
+
+.header {
+  width: 100%;
+  background-color: var(--color__background-header);
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  padding: 0 20px;
 }
 
 .loader {
