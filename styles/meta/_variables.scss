@@ -1,18 +1,17 @@
 // https://lospec.com/palette-list/galeth-100
 
 * {
-    --cell-size: 50px;
-    --board-gap: 2px;
+  --cell-size: 50px;
+  --board-gap: 2px;
 
-    // board
-    --color__board-background: #181d25;
-    --color__water: #3b94ff;
-    --color__sand: #ffdd15;
-    --color__land: #00822c;
-    --color__stone: #565f70;
-    --color__outline: #ef2e2e;
-
-    // footer / header
-    --color__background-footer: #353c4a;
-    --color__background-header: #353c4a;
+  // colors
+  --color__text: #ffffff;
+  --color__water: #3b94ff;
+  --color__sand: #ffdd15;
+  --color__land: #00822c;
+  --color__stone: #565f70;
+  --color__outline: #ef2e2e;
+  --color__background-board: #181d25;
+  --color__background-footer: #353c4a;
+  --color__background-header: #353c4a;
 }

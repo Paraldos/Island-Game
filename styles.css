@@ -1,12 +1,13 @@
 * {
   --cell-size: 50px;
   --board-gap: 2px;
-  --color__board-background: #181d25;
+  --color__text: #ffffff;
   --color__water: #3b94ff;
   --color__sand: #ffdd15;
   --color__land: #00822c;
   --color__stone: #565f70;
   --color__outline: #ef2e2e;
+  --color__background-board: #181d25;
   --color__background-footer: #353c4a;
   --color__background-header: #353c4a;
 }
@@ -18,14 +19,19 @@ body {
   width: 100vw;
   display: grid;
   grid-template-rows: var(--header-size) auto var(--footer-size);
-  background-color: var(--color__board-background);
-  scrollbar-color: white var(--color__board-background);
+  background-color: var(--color__background-board);
+  scrollbar-color: white var(--color__background-board);
   scrollbar-width: thin;
+  color: var(--color__text);
 }
 
 .header {
   width: 100%;
   background-color: var(--color__background-header);
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  padding: 0 20px;
 }
 
 .footer {
@@ -40,7 +46,7 @@ body {
   --board-size: 0;
   max-width: 100%;
   max-height: 100%;
-  background-color: var(--color__board-background);
+  background-color: var(--color__background-board);
   position: relative;
   display: grid;
   grid-template-columns: repeat(var(--board-size), var(--cell-size));

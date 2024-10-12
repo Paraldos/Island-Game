@@ -1,4 +1,4 @@
-export default class Player {
+class Player {
   constructor() {
     this.gold = 100;
     this.wood = 100;
@@ -7,3 +7,5 @@ export default class Player {
     this.population = 0;
   }
 }
+
+export default new Player();
