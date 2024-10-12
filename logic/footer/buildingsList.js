@@ -1,9 +1,14 @@
+import buildings from "../buildings.js";
+
 export default class BuildingsList {
   constructor(parent) {
     this.parent = parent;
     this.container = this.addContainer();
     this.btn = this.addBtn();
     this.list = this.addList();
+    for (const key in buildings) {
+      new ListItem(key, this.list);
+    }
   }
 
   addContainer() {
@@ -24,13 +29,13 @@ export default class BuildingsList {
   addList() {
     const element = document.createElement("ul");
     element.classList.add("buildings-list__list");
-    element.innerHTML = `
-      <li class="buildings-list__list-item">Farm</li>
-      <li class="buildings-list__list-item">Mine</li>
-      <li class="buildings-list__list-item">Fisher</li>
-      <li class="buildings-list__list-item">House</li>
-    `;
     this.container.appendChild(element);
     return element;
+  }
+}
+
+class ListItem {
+  constructor(key, parent) {
+    console.log(key);
   }
 }
