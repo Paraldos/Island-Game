@@ -64,7 +64,7 @@ body {
   width: var(--cell-size);
   height: var(--cell-size);
   background-color: var(--color-cell);
-  border-radius: 10px;
+  border-radius: 5px;
   border: 2px solid var(--color-cell);
 }
 .cell--coast {
