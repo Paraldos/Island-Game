@@ -9,6 +9,7 @@ class Preload {
       this.prepSvg("assets/house.svg", "house"),
       this.prepSvg("assets/chevron-right.svg", "chevronRight"),
     ]);
+    // await this.wait(5000);
     document.body.dispatchEvent(new Event("svgsLoaded"));
   }
 
@@ -23,6 +24,10 @@ class Preload {
 
   getSVG(key) {
     return this[key].cloneNode(true);
+  }
+
+  wait(ms) {
+    return new Promise((resolve) => setTimeout(resolve, ms));
   }
 }
 

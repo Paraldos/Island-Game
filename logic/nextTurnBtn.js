@@ -8,7 +8,7 @@ export default class NextTurnBtn {
   addBtn() {
     const element = document.createElement("button");
     element.classList.add("nextTurnBtn");
-    element.appendChild(SVG.getSVG("chevronRight"));
+    element.appendChild(Preload.getSVG("chevronRight"));
     return element;
   }
 }

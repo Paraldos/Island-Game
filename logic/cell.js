@@ -28,7 +28,7 @@ export default class Cell {
 
   async addSVG(nameOfSVG) {
     this.clearCell();
-    const svg = SVG.getSVG(nameOfSVG);
+    const svg = Preload.getSVG(nameOfSVG);
     this.cell.appendChild(svg);
   }
 
