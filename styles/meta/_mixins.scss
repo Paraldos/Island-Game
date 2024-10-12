@@ -1,7 +1,18 @@
 @mixin btn {
-  background-color: gray;
+  background-color: var(--color__btn-background);
   outline: none;
   border: none;
   padding: 10px 20px;
   font-family: RobotSlab, sans-serif;
+  color: var(--color__btn-text);
+  font-size: 1rem;
+  text-align: left;
+
+  &:hover {
+    background-color: var(--color__btn-background--hover);
+    color: var(--color__btn-text--hover);
+    svg {
+      fill: var(--color__btn-text--hover);
+    }
+  }
 }

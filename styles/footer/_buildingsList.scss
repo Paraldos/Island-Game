@@ -1,5 +1,39 @@
 .buildings-list {
+  position: relative;
+  min-width: 200px;
+
+  &:hover {
+    .buildings-list__list {
+      display: grid;
+    }
+  }
+
   &__btn {
     @include btn;
+    width: 100%;
+  }
+
+  &__list {
+    list-style: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(0, -100%);
+    background-color: var(--color__btn-background);
+    display: none;
+    border: 5px solid transparent;
+    width: 100%;
+  }
+
+  &__list-item {
+    padding: 10px 20px;
+    color: var(--color__btn-text);
+    font-size: 1rem;
+    text-align: left;
+
+    &:hover {
+      background-color: var(--color__btn-background--hover);
+      color: var(--color__btn-text--hover);
+    }
   }
 }

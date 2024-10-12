@@ -10,6 +10,10 @@
   --color__background-board: #181d25;
   --color__background-footer: #353c4a;
   --color__background-header: #353c4a;
+  --color__btn-background: #c7cacf;
+  --color__btn-background--hover: #888f9d;
+  --color__btn-text: #000000;
+  --color__btn-text--hover: #ffffff;
 }
 
 @font-face {
@@ -26,28 +30,77 @@
 }
 
 .nextTurnBtn {
-  background-color: gray;
+  background-color: var(--color__btn-background);
   outline: none;
   border: none;
   padding: 10px 20px;
   font-family: RobotSlab, sans-serif;
+  color: var(--color__btn-text);
+  font-size: 1rem;
+  text-align: left;
   height: 50%;
   aspect-ratio: 1;
   border-radius: 100%;
   font-size: 30px;
   padding: 2px 0 0 6px;
 }
+.nextTurnBtn:hover {
+  background-color: var(--color__btn-background--hover);
+  color: var(--color__btn-text--hover);
+}
+.nextTurnBtn:hover svg {
+  fill: var(--color__btn-text--hover);
+}
 .nextTurnBtn svg {
   height: 100%;
   width: 100%;
 }
 
+.buildings-list {
+  position: relative;
+  min-width: 200px;
+}
+.buildings-list:hover .buildings-list__list {
+  display: grid;
+}
 .buildings-list__btn {
-  background-color: gray;
+  background-color: var(--color__btn-background);
   outline: none;
   border: none;
   padding: 10px 20px;
   font-family: RobotSlab, sans-serif;
+  color: var(--color__btn-text);
+  font-size: 1rem;
+  text-align: left;
+  width: 100%;
+}
+.buildings-list__btn:hover {
+  background-color: var(--color__btn-background--hover);
+  color: var(--color__btn-text--hover);
+}
+.buildings-list__btn:hover svg {
+  fill: var(--color__btn-text--hover);
+}
+.buildings-list__list {
+  list-style: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(0, -100%);
+  background-color: var(--color__btn-background);
+  display: none;
+  border: 5px solid transparent;
+  width: 100%;
+}
+.buildings-list__list-item {
+  padding: 10px 20px;
+  color: var(--color__btn-text);
+  font-size: 1rem;
+  text-align: left;
+}
+.buildings-list__list-item:hover {
+  background-color: var(--color__btn-background--hover);
+  color: var(--color__btn-text--hover);
 }
 
 body {
