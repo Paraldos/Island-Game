@@ -10,30 +10,4 @@
   gap: var(--board-gap);
   margin: auto;
   overflow: scroll;
-
-  &__cell {
-    --color-cell: var(--color__water);
-
-    width: var(--cell-size);
-    height: var(--cell-size);
-    background-color: var(--color-cell);
-    border-radius: 10px;
-    border: 2px solid var(--color-cell);
-
-    &--sand {
-      --color-cell: var(--color__sand);
-    }
-
-    &--land {
-      --color-cell: var(--color__land);
-    }
-
-    &--stone {
-      --color-cell: var(--color__outline);
-    }
-
-    &:hover {
-      border-color: var(--color__outline);
-    }
-  }
 }

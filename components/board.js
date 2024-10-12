@@ -1,3 +1,5 @@
+import Cell from "./cell.js";
+
 export default class Board {
   constructor() {
     this.boardSize = 10;
@@ -14,13 +16,13 @@ export default class Board {
       [0, 0, 0, 0, 0, 1, 1, 1, 0, 0],
       [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
     ];
-    this.displayGrid();
+    this.createCells();
   }
 
   createBoard() {
     const board = document.createElement("div");
     board.classList.add("board");
-    board.style.setProperty('--board-size', this.boardSize)
+    board.style.setProperty("--board-size", this.boardSize);
     document.body.appendChild(board);
     return board;
   }
@@ -39,26 +41,22 @@ export default class Board {
     return grid;
   }
 
-  async displayGrid() {
+  async createCells() {
     for (let y = 0; y < this.grid.length; y++) {
       for (let x = 0; x < this.grid[y].length; x++) {
-        const element = document.createElement("div");
-        this.board.appendChild(element);
-        // type
+        let type = "";
         switch (this.grid[y][x]) {
           case 0:
-            element.classList.add(`board__cell--water`);
+            type = "water";
             break;
           case 1:
-            element.classList.add(`board__cell--sand`);
+            type = "coast";
             break;
           case 2:
-            element.classList.add(`board__cell--land`);
+            type = "land";
             break;
         }
-        // classes
-        element.classList.add(`board__cell`);
-        element.classList.add(`board__cell-${x}-${y}`);
+        new Cell(this.board, type, x, y);
       }
     }
   }

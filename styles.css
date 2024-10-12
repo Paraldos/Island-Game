@@ -48,26 +48,6 @@ body {
   margin: auto;
   overflow: scroll;
 }
-.board__cell {
-  --color-cell: var(--color__water);
-  width: var(--cell-size);
-  height: var(--cell-size);
-  background-color: var(--color-cell);
-  border-radius: 10px;
-  border: 2px solid var(--color-cell);
-}
-.board__cell--sand {
-  --color-cell: var(--color__sand);
-}
-.board__cell--land {
-  --color-cell: var(--color__land);
-}
-.board__cell--stone {
-  --color-cell: var(--color__outline);
-}
-.board__cell:hover {
-  border-color: var(--color__outline);
-}
 
 .nextTurnBtn {
   background-color: gray;
@@ -77,6 +57,27 @@ body {
   aspect-ratio: 1;
   border-radius: 100%;
   font-size: 30px;
+}
+
+.cell {
+  --color-cell: var(--color__water);
+  width: var(--cell-size);
+  height: var(--cell-size);
+  background-color: var(--color-cell);
+  border-radius: 10px;
+  border: 2px solid var(--color-cell);
+}
+.cell--coast {
+  --color-cell: var(--color__sand);
+}
+.cell--land {
+  --color-cell: var(--color__land);
+}
+.cell--stone {
+  --color-cell: var(--color__outline);
+}
+.cell:hover {
+  border-color: var(--color__outline);
 }
 
 *,
