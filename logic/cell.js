@@ -1,4 +1,5 @@
 import Preload from "./preload.js";
+import player from "./player.js";
 
 export default class Cell {
   constructor(parent, type, x, y) {
@@ -22,7 +23,15 @@ export default class Cell {
   addEventListener() {
     this.cell.addEventListener("click", () => {
       console.log(`Clicked on cell ${this.x}-${this.y}`);
-      this.addSVG("house");
+      if (player.build === "house") {
+        this.addSVG("house");
+      } else if (player.build === "farm") {
+        this.addSVG("farm");
+      } else if (player.build === "mine") {
+        this.addSVG("mine");
+      } else if (player.build === "fisher") {
+        this.addSVG("fisher");
+      }
     });
   }
 

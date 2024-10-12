@@ -1,5 +1,6 @@
 import buildings from "../buildings.js";
 import preload from "../preload.js";
+import player from "../player.js";
 
 export default class BuildingsList {
   constructor(parent) {
@@ -39,7 +40,8 @@ class ListItem {
   constructor(key, parent) {
     this.key = key;
     this.parent = parent;
-    this.addElement();
+    this.element = this.addElement();
+    this.element.addEventListener("click", () => this.clickEvent());
   }
 
   addElement() {
@@ -49,5 +51,9 @@ class ListItem {
     element.classList.add("buildings-list__item");
     this.parent.appendChild(element);
     return element;
+  }
+
+  clickEvent() {
+    player.build = this.key;
   }
 }

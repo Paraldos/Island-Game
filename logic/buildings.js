@@ -1,20 +1,10 @@
+import Building from "./building.js";
+
 const buildings = {
-  farm: {
-    name: "Farm",
-    icon: "farm",
-  },
-  mine: {
-    name: "Mine",
-    icon: "mine",
-  },
-  fisher: {
-    name: "Fisher",
-    icon: "fisher",
-  },
-  house: {
-    name: "House",
-    icon: "house",
-  },
+  farm: new Building("Farm", "farm"),
+  mine: new Building("Mine", "mine"),
+  fisher: new Building("Fisher", "fisher"),
+  house: new Building("House", "house"),
 };
 
 export default buildings;

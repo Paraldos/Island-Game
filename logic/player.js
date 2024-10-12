@@ -5,6 +5,7 @@ class Player {
     this.food = 100;
     this.stone = 100;
     this.population = 0;
+    this.build = '';
   }
 }
 
