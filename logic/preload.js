@@ -7,6 +7,8 @@ class Preload {
     await Promise.all([
       this.prepSvg("./assets/svgs/fisher.svg", "fisher"),
       this.prepSvg("./assets/svgs/house.svg", "house"),
+      this.prepSvg("./assets/svgs/farm.svg", "farm"),
+      this.prepSvg("./assets/svgs/mine.svg", "mine"),
       this.prepSvg("./assets/svgs/chevron-right.svg", "chevronRight"),
     ]);
     // await this.wait(5000);

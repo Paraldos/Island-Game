@@ -1,4 +1,5 @@
 import buildings from "../buildings.js";
+import preload from "../preload.js";
 
 export default class BuildingsList {
   constructor(parent) {
@@ -36,6 +37,17 @@ export default class BuildingsList {
 
 class ListItem {
   constructor(key, parent) {
-    console.log(key);
+    this.key = key;
+    this.parent = parent;
+    this.addElement();
+  }
+
+  addElement() {
+    const element = document.createElement("li");
+    element.appendChild(preload.getSVG(buildings[this.key].icon));
+    element.innerHTML += buildings[this.key].name;
+    element.classList.add("buildings-list__item");
+    this.parent.appendChild(element);
+    return element;
   }
 }
