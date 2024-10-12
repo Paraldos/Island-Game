@@ -1,4 +1,4 @@
-import SVG from "./svg.js";
+import Preload from "./preload.js";
 
 export default class Cell {
   constructor(parent, type, x, y) {

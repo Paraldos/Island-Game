@@ -1,8 +1,15 @@
-class SVG {
+class Preload {
   constructor() {
-    this.prepSvg("assets/fisher.svg", "fisher");
-    this.prepSvg("assets/house.svg", "house");
-    this.prepSvg("assets/chevron-right.svg", "chevronRight");
+    this.init();
+  }
+
+  async init() {
+    await Promise.all([
+      this.prepSvg("assets/fisher.svg", "fisher"),
+      this.prepSvg("assets/house.svg", "house"),
+      this.prepSvg("assets/chevron-right.svg", "chevronRight"),
+    ]);
+    document.body.dispatchEvent(new Event("svgsLoaded"));
   }
 
   async prepSvg(path, key) {
@@ -19,4 +26,4 @@ class SVG {
   }
 }
 
-export default new SVG();
+export default new Preload();

@@ -1,4 +1,4 @@
-import SVG from "./svg.js";
+import Preload from "./preload.js";
 
 export default class NextTurnBtn {
   constructor() {
@@ -8,9 +8,7 @@ export default class NextTurnBtn {
   addBtn() {
     const element = document.createElement("button");
     element.classList.add("nextTurnBtn");
-    setTimeout(() => {
-      element.appendChild(SVG.getSVG("chevronRight"));
-    }, 300);
+    element.appendChild(SVG.getSVG("chevronRight"));
     return element;
   }
 }
