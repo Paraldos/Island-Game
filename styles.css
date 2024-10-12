@@ -6,7 +6,9 @@
   --color__sand: #ffdd15;
   --color__land: #00822c;
   --color__stone: #565f70;
-  --color__outline: #ef2e2e;
+  --color__cell-border--neutral: blue;
+  --color__cell-border--negative: red;
+  --color__cell-border--positive: yellow;
   --color__background-board: #181d25;
   --color__background-footer: #353c4a;
   --color__background-header: #353c4a;
@@ -157,8 +159,14 @@ body {
 .cell--stone {
   --color-cell: var(--color__outline);
 }
-.cell:hover {
-  border-color: var(--color__outline);
+.cell--status-neutral:hover {
+  border-color: var(--color__cell-border--neutral);
+}
+.cell--status-positive:hover {
+  border-color: var(--color__cell-border--positive);
+}
+.cell--status-negative:hover {
+  border-color: var(--color__cell-border--negative);
 }
 .cell svg {
   width: 70%;

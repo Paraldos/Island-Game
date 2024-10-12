@@ -22,8 +22,16 @@
     --color-cell: var(--color__outline);
   }
 
-  &:hover {
-    border-color: var(--color__outline);
+  &--status-neutral:hover {
+    border-color: var(--color__cell-border--neutral);
+  }
+
+  &--status-positive:hover {
+    border-color: var(--color__cell-border--positive);
+  }
+
+  &--status-negative:hover {
+    border-color: var(--color__cell-border--negative);
   }
 
   svg {

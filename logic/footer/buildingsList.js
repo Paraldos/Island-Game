@@ -54,6 +54,6 @@ class ListItem {
   }
 
   clickEvent() {
-    player.build = this.key;
+    player.build = buildings[this.key];
   }
 }
