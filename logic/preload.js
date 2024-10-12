@@ -5,9 +5,9 @@ class Preload {
 
   async init() {
     await Promise.all([
-      this.prepSvg("assets/fisher.svg", "fisher"),
-      this.prepSvg("assets/house.svg", "house"),
-      this.prepSvg("assets/chevron-right.svg", "chevronRight"),
+      this.prepSvg("./assets/svgs/fisher.svg", "fisher"),
+      this.prepSvg("./assets/svgs/house.svg", "house"),
+      this.prepSvg("./assets/svgs/chevron-right.svg", "chevronRight"),
     ]);
     // await this.wait(5000);
     document.body.dispatchEvent(new Event("svgsLoaded"));
