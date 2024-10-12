@@ -2,6 +2,7 @@ class SVG {
   constructor() {
     this.prepSvg("assets/fisher.svg", "fisher");
     this.prepSvg("assets/house.svg", "house");
+    this.prepSvg("assets/chevron-right.svg", "chevronRight");
   }
 
   async prepSvg(path, key) {
