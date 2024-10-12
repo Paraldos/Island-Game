@@ -4,14 +4,22 @@ export default class Cell {
     this.type = type;
     this.x = x;
     this.y = y;
-    this.createCell();
+    this.cell = this.createCell();
+    this.addEventListener();
   }
 
   createCell() {
-    this.element = document.createElement("div");
-    this.element.classList.add("cell");
-    this.element.classList.add(`cell--${this.type}`);
-    this.element.classList.add(`cell--${this.x}-${this.y}`);
-    this.parent.appendChild(this.element);
+    const element = document.createElement("div");
+    element.classList.add("cell");
+    element.classList.add(`cell--${this.type}`);
+    element.classList.add(`cell--${this.x}-${this.y}`);
+    this.parent.appendChild(element);
+    return element;
+  }
+
+  addEventListener() {
+    this.cell.addEventListener("click", () => {
+      console.log(`Clicked on cell ${this.x}-${this.y}`);
+    });
   }
 }
