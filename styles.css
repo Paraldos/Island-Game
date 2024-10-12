@@ -12,6 +12,10 @@
   --color__background-header: #353c4a;
 }
 
+@font-face {
+  font-family: RobotSlab;
+  src: url(../../assets/fonts/RobotoSlab-VariableFont_wght.ttf);
+}
 .footer {
   width: 100%;
   background-color: var(--color__background-footer);
@@ -26,6 +30,7 @@
   outline: none;
   border: none;
   padding: 10px 20px;
+  font-family: RobotSlab, sans-serif;
   height: 50%;
   aspect-ratio: 1;
   border-radius: 100%;
@@ -42,6 +47,7 @@
   outline: none;
   border: none;
   padding: 10px 20px;
+  font-family: RobotSlab, sans-serif;
 }
 
 body {
@@ -54,6 +60,7 @@ body {
   background-color: var(--color__background-board);
   scrollbar-color: white var(--color__background-board);
   scrollbar-width: thin;
+  font-family: RobotSlab, sans-serif;
   color: var(--color__text);
 }
 
