@@ -7,11 +7,17 @@ export default class Cell {
     this.cellType = cellType;
     this.x = x;
     this.y = y;
-    this.cell = this.createCell();
     this.status = "neutral";
-    this.addEventListener();
+
+    // create
+    this.cell = this.createCell();
+
+    // Event listeners
+    this.cell.addEventListener("click", () => this.onClick());
+    this.cell.addEventListener("mouseover", () => this.onMouseOver());
   }
 
+  // create cell
   createCell() {
     const element = document.createElement("div");
     element.classList.add("cell");
@@ -21,27 +27,21 @@ export default class Cell {
     return element;
   }
 
-  addEventListener() {
-    this.cell.addEventListener("click", () => {
-      console.log(`Clicked on cell ${this.x}-${this.y}`);
-      if (player.build === "house") {
-        this.addSVG("house");
-      } else if (player.build === "farm") {
-        this.addSVG("farm");
-      } else if (player.build === "mine") {
-        this.addSVG("mine");
-      } else if (player.build === "fisher") {
-        this.addSVG("fisher");
-      }
-    });
-
-    this.cell.addEventListener("mouseover", () => {
-      this.getStatus();
-      this.setStatusClass();
-    });
+  // Event handlers
+  onClick() {
+    if (this.status === "negative") return;
+    if (player.build !== "") {
+      this.addSVG(player.build.icon);
+    }
   }
 
-  getStatus() {
+  onMouseOver() {
+    this.updateStatus();
+    this.setStatusClass();
+  }
+
+  // helper
+  updateStatus() {
     this.status = "neutral";
     if (player.build !== "") {
       this.status = "positive";
@@ -61,9 +61,8 @@ export default class Cell {
     this.cell.classList.add(`cell--status-${this.status}`);
   }
 
-  async addSVG(nameOfSVG) {
+  async addSVG(svg) {
     this.clearCell();
-    const svg = Preload.getSVG(nameOfSVG);
     this.cell.appendChild(svg);
   }
 

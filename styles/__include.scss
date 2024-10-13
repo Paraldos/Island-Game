@@ -1,10 +1,7 @@
 @import "./meta/_include";
-@import "./footer/footer";
-@import "./footer/nextTurnBtn";
-@import "./footer/buildingsList";
+@import "./footer/_include";
+@import "./board/_include";
 @import "./body";
-@import "./board";
-@import "./cell";
 @import "./header";
 @import "./loader";
 
