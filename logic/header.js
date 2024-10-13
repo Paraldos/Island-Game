@@ -4,6 +4,15 @@ export default class Header {
   constructor() {
     this.container = this.createContainer();
     this.createResourceUI();
+    document.body.addEventListener("updateResources", () =>
+      this.onUpdateResources()
+    );
+  }
+
+  onUpdateResources() {
+    this.container.querySelector(
+      ".header__resources"
+    ).innerHTML = `Gold: ${player.gold} | Wood: ${player.wood} | Food: ${player.food} | Stone: ${player.stone} | Population: ${player.population}`;
   }
 
   createContainer() {

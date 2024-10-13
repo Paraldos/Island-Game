@@ -1,5 +1,4 @@
 import buildings from "../buildings.js";
-import preload from "../preload.js";
 import player from "../player.js";
 
 export default class BuildingsList {

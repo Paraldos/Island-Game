@@ -22,42 +22,6 @@
   font-family: RobotSlab;
   src: url(../../assets/fonts/RobotoSlab-VariableFont_wght.ttf);
 }
-.footer {
-  width: 100%;
-  background-color: var(--color__background-footer);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 20px;
-}
-
-.nextTurnBtn {
-  background-color: var(--color__btn-background);
-  outline: none;
-  border: none;
-  padding: 10px 20px;
-  font-family: RobotSlab, sans-serif;
-  color: var(--color__btn-text);
-  font-size: 1rem;
-  text-align: left;
-  height: 50%;
-  aspect-ratio: 1;
-  border-radius: 100%;
-  font-size: 30px;
-  padding: 10px;
-}
-.nextTurnBtn:hover {
-  background-color: var(--color__btn-background--hover);
-  color: var(--color__btn-text--hover);
-}
-.nextTurnBtn:hover svg {
-  fill: var(--color__btn-text--hover);
-}
-.nextTurnBtn svg {
-  height: 100%;
-  width: 100%;
-}
-
 .buildings-list {
   position: relative;
   min-width: 200px;
@@ -112,18 +76,40 @@
   color: var(--color__btn-text--hover);
 }
 
-body {
-  --header-size: 50px;
-  --footer-size: 100px;
-  height: 100vh;
-  width: 100vw;
-  display: grid;
-  grid-template-rows: var(--header-size) auto var(--footer-size);
-  background-color: var(--color__background-board);
-  scrollbar-color: white var(--color__background-board);
-  scrollbar-width: thin;
+.footer {
+  width: 100%;
+  background-color: var(--color__background-footer);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.nextTurnBtn {
+  background-color: var(--color__btn-background);
+  outline: none;
+  border: none;
+  padding: 10px 20px;
   font-family: RobotSlab, sans-serif;
-  color: var(--color__text);
+  color: var(--color__btn-text);
+  font-size: 1rem;
+  text-align: left;
+  height: 50%;
+  aspect-ratio: 1;
+  border-radius: 100%;
+  font-size: 30px;
+  padding: 10px;
+}
+.nextTurnBtn:hover {
+  background-color: var(--color__btn-background--hover);
+  color: var(--color__btn-text--hover);
+}
+.nextTurnBtn:hover svg {
+  fill: var(--color__btn-text--hover);
+}
+.nextTurnBtn svg {
+  height: 100%;
+  width: 100%;
 }
 
 .board {
@@ -171,6 +157,20 @@ body {
 .cell svg {
   width: 70%;
   height: 70%;
+}
+
+body {
+  --header-size: 50px;
+  --footer-size: 100px;
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  grid-template-rows: var(--header-size) auto var(--footer-size);
+  background-color: var(--color__background-board);
+  scrollbar-color: white var(--color__background-board);
+  scrollbar-width: thin;
+  font-family: RobotSlab, sans-serif;
+  color: var(--color__text);
 }
 
 .header {

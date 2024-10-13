@@ -1,5 +1,4 @@
-import Preload from "./preload.js";
-import player from "./player.js";
+import player from "../player.js";
 
 export default class Cell {
   constructor(parent, cellType, x, y) {
@@ -34,6 +33,7 @@ export default class Cell {
     if (this.status === "negative") return;
     if (player.build !== "") {
       this.building = { ...player.build };
+      this.payBuilding();
       this.addSVG(this.building.icon);
     }
   }
@@ -44,6 +44,13 @@ export default class Cell {
   }
 
   // helper
+  payBuilding() {
+    for (const resource in this.building.costs) {
+      player[resource] -= this.building.costs[resource];
+    }
+    document.body.dispatchEvent(new Event("updateResources"));
+  }
+
   updateStatus() {
     this.status = "neutral";
     if (player.build !== "") {

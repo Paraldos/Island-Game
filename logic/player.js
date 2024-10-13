@@ -1,10 +1,10 @@
 class Player {
   constructor() {
-    this.gold = 0;
-    this.wood = 0;
-    this.food = 0;
-    this.stone = 0;
-    this.population = 0;
+    this.gold = 100;
+    this.wood = 100;
+    this.food = 100;
+    this.stone = 100;
+    this.population = 100;
     this.build = "";
   }
 }

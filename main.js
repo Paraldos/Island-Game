@@ -1,7 +1,6 @@
 import Header from "./logic/header.js";
-import Board from "./logic/board.js";
+import Board from "./logic/board/board.js";
 import Footer from "./logic/footer/footer.js";
-import Preload from "./logic/preload.js";
 
 document.body.addEventListener("svgsLoaded", () => {
   document.body.classList.remove("loading");
