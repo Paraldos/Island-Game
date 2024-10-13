@@ -8,12 +8,13 @@ export default class Cell {
     this.x = x;
     this.y = y;
     this.status = "neutral";
+    this.building = null;
 
     // create
     this.cell = this.createCell();
 
     // Event listeners
-    this.cell.addEventListener("click", () => this.onClick());
+    this.cell.addEventListener("click", (e) => this.onClick(e));
     this.cell.addEventListener("mouseover", () => this.onMouseOver());
   }
 
@@ -28,10 +29,12 @@ export default class Cell {
   }
 
   // Event handlers
-  onClick() {
+  onClick(e) {
+    if (e.target !== this.cell) return;
     if (this.status === "negative") return;
     if (player.build !== "") {
-      this.addSVG(player.build.icon);
+      this.building = { ...player.build };
+      this.addSVG(this.building.icon);
     }
   }
 
@@ -63,7 +66,8 @@ export default class Cell {
 
   async addSVG(svg) {
     this.clearCell();
-    this.cell.appendChild(svg);
+    const newSvg = svg.cloneNode(true);
+    this.cell.appendChild(newSvg);
   }
 
   clearCell() {
